@@ -1,0 +1,116 @@
+syntax = "proto3";
+
+package dvbinterface;
+
+message getConnectionRequest {
+    string url = 1;
+}
+
+message getConnectionResult {
+    bool success = 1;
+    string message = 2;
+    int32 protocolVersion = 3;
+    string serverDescription = 4;
+}
+
+message getCatalogsRequest {
+}
+
+message getCatalogsResult {
+    string tableCatalog = 1;
+}
+
+message getSchemasRequest {
+    string catalog = 1;
+    string schemaPattern = 2;
+}
+
+message getSchemasResult {
+    string tableCatalog = 1;
+    string tableSchema = 2;
+}
+
+message getTablesRequest {
+    string catalog = 1;
+    string schemaPattern = 2;
+    string tableNamePattern = 3;
+    repeated string types = 4;
+}
+
+message getTablesResult {
+    string tableSchema = 1;
+    string tableCatalog = 2;
+    string tableName = 3;
+    string tableType = 4;
+    string remarks = 5;
+}
+
+message getColumnsRequest {
+    string catalog = 1;
+    string schemaPattern = 2;
+    string tableNamePattern = 3;
+    string columnNamePattern = 4;
+}
+
+message getColumnsResult {
+    string tableSchema = 1;
+    string tableCatalog = 2;
+    string tableName = 3;
+    string columnName = 4;
+    enum jdbcDataType {
+        NULL            =   0;
+        BIT             =  -7;
+        TINYINT         =  -6;
+        SMALLINT        =   5;
+        INTEGER         =   4;
+        BIGINT          =  -5;
+        FLOAT           =   6;
+        REAL            =   7;
+        DOUBLE          =   8;
+        NUMERIC         =   2;
+        DECIMAL         =   3;
+        CHAR            =   1;
+        VARCHAR         =  12;
+        LONGVARCHAR     =  -1;
+        DATE            =  91;
+        TIME            =  92;
+        TIMESTAMP       =  93;
+        BINARY          =  -2;
+        VARBINARY       =  -3;
+        LONGVARBINARY   =  -4;
+        OTHER           = 1111;
+        JAVA_OBJECT         = 2000;
+        DISTINCT            = 2001;
+        STRUCT              = 2002;
+        ARRAY               = 2003;
+        BLOB                = 2004;
+        CLOB                = 2005;
+        REF                 = 2006;
+        DATALINK = 70;
+        BOOLEAN = 16;
+        ROWID = -8;
+        NCHAR = -15;
+        NVARCHAR = -9;
+        LONGNVARCHAR = -16;
+        NCLOB = 2011;
+        SQLXML = 2009;
+        REF_CURSOR = 2012;
+        TIME_WITH_TIMEZONE = 2013;
+        TIMESTAMP_WITH_TIMEZONE = 2014;
+    }
+    jdbcDataType dataType = 5;
+    int32 columnSize = 6;
+    int32 decimalDigits = 7;
+    int32 numPrecRadix  = 8;
+    bool nullable = 9;
+    int32 ordinalPosition = 10;
+    string remarks = 11;
+}
+
+service dataConnection {
+    rpc getConnection (getConnectionRequest) returns (getConnectionResult);
+    rpc getCatalogs (getCatalogsRequest) returns (getCatalogsResult);
+    rpc getSchemas (getSchemasRequest) returns (getSchemasResult);
+    rpc getTables (getTablesRequest) returns (getTablesResult);
+    rpc getColumns (getColumnsRequest) returns (getColumnsResult);
+}

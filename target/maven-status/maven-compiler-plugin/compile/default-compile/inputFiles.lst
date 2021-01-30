@@ -1,0 +1,12 @@
+/home/romanm/Documents/IdeaProjects/dvbConnector/src/main/java/com/bridge/driver/exception/DriverConnectionException.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/src/main/java/com/bridge/driver/DvbConnection.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/src/main/java/com/bridge/driver/DvbConnectionImpl.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/src/main/java/com/bridge/util/DriverProperties.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/src/main/java/com/bridge/util/UrlParser.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/src/main/java/com/bridge/grpc_client/BridgeClientImpl.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/target/generated-sources/protobuf/grpc-java/dvbinterface/dataConnectionGrpc.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/src/main/java/com/bridge/driver/Constants.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/target/generated-sources/protobuf/java/dvbinterface/Dvbinterface.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/src/main/java/com/bridge/driver/DvbDriver.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/src/main/java/com/bridge/driver/enums/ConnectionParameters.java
+/home/romanm/Documents/IdeaProjects/dvbConnector/src/main/java/com/bridge/grpc_client/BridgeClient.java
